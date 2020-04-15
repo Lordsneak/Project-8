@@ -18,3 +18,7 @@ Creation Fichier Index.ejs et Auteur.ejs & Citation.ejs
 -----------------------------------------------------------
 Install Body parser 
 $ npm i body-parser
+
+-----------------------------------------------------------
+Ajouté Sur APP.js
+METHOD => GET , POST , UPDATE , DELETE

@@ -6,21 +6,31 @@
     <title>Citation</title>
 </head>
 <body>
-    
-    <form action="/" method="post">
-    ID :
-    <input type="text" name="id" > <br>
-    Text:
-    <input type="text" name="text" > <br>
-    Source:
-    <input type="text" name="source" > <br>
-    ID Auteur:
-    <input type="text" name="id_auteur" > <br>
-    <hr>
-    Nom Auteur:
-    <input type="text" name="nom" > <br>
-    <button type="submit" ">Add Formlaire</button>
-    </form>
+            <div class=""> 
+            <H1> Create </H1>
+            <form action="/" method="post">
+            Text:
+            <input type="text" name="text" > <br>
+            Source:
+            <input type="text" name="source" > <br>
+            ID Auteur:
+            <input type="text" name="id_auteur" > <br>
+            <hr>
+            Nom Auteur:
+            <input type="text" name="nom" > <br>
+            <button type="submit" ">Create </button>
+            </form>        
+            </div>
+
+            <div class=""> 
+            <H1> DELETE </H1>
+            <form action="/del" method="get">
+            ID:
+            <input type="text"> <br>
+            <button type="submit" name="id" ">DELETE </button>
+            </form>        
+            </div>
+
 
 
 </body>

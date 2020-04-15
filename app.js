@@ -49,7 +49,26 @@ app.get("/auteur", (req,res) => {
 //POST Data
 
 app.post("/",urlencodedParser, (req, res) => {
-        console.log(req.body.text+">>>>>>>"+req.body.source)
+        let postData = {id: req.body.id, text: req.body.text,source: req.body.source,id_auteur: req.body.id_auteur}
+        let postData2 = {id:req.body.id_auteur,nom: req.body.nom}
+        let sql = "INSERT INTO citation SET ?"
+        let sql2 = "INSERT INTO auteur SET ?"
+        connection.query(sql,postData, (error,result) => {
+                if(error) {
+                    console.log("Your Data Not Submited , TRY AGAIN");
+                } else {
+                    console.log("Successfully");
+                } 
+                    
+        })
+        connection.query(sql2,postData2, (error,result) => {
+            if(error) {
+                console.log("Your Data Not Submited , TRY AGAIN");
+            } else {
+                console.log("Successfully")
+            } 
+                
+    })
 });
 
 

@@ -49,7 +49,7 @@ app.get("/auteur", (req,res) => {
 //POST Data
 
 app.post("/",urlencodedParser, (req, res) => {
-        console.log(req.body.text)
+        console.log(req.body.text+">>>>>>>"+req.body.source)
 });
 
 

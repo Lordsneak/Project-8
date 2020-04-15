@@ -1,7 +1,10 @@
 const express = require('express')
 const app = express()
 const path = require('path')
-const mysql = require('mysql')
+var mysql = require('mysql')
+var bodyParser = require('body-parser');
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const port = 1337
 // connection mysql
@@ -44,15 +47,11 @@ app.get("/auteur", (req,res) => {
     res.render('auteur')
 });
 //POST Data
-app.post("/", (res, req) => {
 
+app.post("/",urlencodedParser, (req, res) => {
+        console.log(req.body.text)
 });
-app.post("/citation", (res, req) => {
 
-});
-app.post("/auteur", (res, req) => {
-
-});
 
 app.listen(port, function() {
     console.log(`listening on port ${port}...`)

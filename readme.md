@@ -15,3 +15,6 @@ $ npm i ejs
 Installation MYSQL : 
 $ npm i mysql
 Creation Fichier Index.ejs et Auteur.ejs & Citation.ejs
+-----------------------------------------------------------
+Install Body parser 
+$ npm i body-parser

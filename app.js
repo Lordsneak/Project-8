@@ -99,8 +99,18 @@ app.post("/", urlencodedParser, (req, res) => {
     })
     res.redirect('/')
 });
-//UPDATE DATA
+//UPDATE DATA into mysql database
 
+app.put('/updatecitation', (req, res) => {
+    connection.query('UPDATE `citation` SET `text`=?,`source`=?,`id_auteur`=? where `id`=?', [req.body.text,req.body.source, req.body.id_auteur, req.body.id],  (error, results, fields)  =>  {
+       if (error) {
+           console.log("NO CHANGE DATA")
+       } else {
+           console.log("Data have been changed")
+       }
+
+     });
+ });
 
 //Delete Data
 app.get("/del-citation/:id", (req, res, next) => {

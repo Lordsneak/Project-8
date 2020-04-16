@@ -14,7 +14,7 @@
             Source:
             <input type="text" name="source" > <br>
             ID Auteur:
-            <input type="text" name="id_auteur" > <br>
+            <input type="number" name="id_auteur" > <br>
             <hr>
             Nom Auteur:
             <input type="text" name="nom" > <br>
@@ -26,6 +26,20 @@
             <br>
             <br>
 
-
+            <div class=""> 
+                <H1> UPDATE </H1>
+                <form action="/updatecitation" method="POST">
+                ID:
+                <input type="number" name="id" > <br>
+                Text:
+                <input type="text" name="text" > <br>
+                Source:
+                <input type="text" name="source" > <br>
+                ID Auteur:
+                <input type="number" name="id_auteur" > <br>
+                <hr>
+                <button type="submit" ">UPDATE </button>
+                </form>        
+                </div>
 </body>
 </html>

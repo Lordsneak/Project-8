@@ -65,12 +65,10 @@
         <div class="col-12 cardcss1">
           <div class="card">
             <div class="card-body">
-              <h6> ID Auteur :</h6>
-              <h6 class="card-title"><%= row.id_auteur %></h6>
+              <h6> ID Auteur : <%= row.id_auteur %></h6>
               <h6> Source :</h6>
               <h6 class="card-subtitle mb-2 text-muted"><%= row.source %></h6>
-              <h6> Subject :</h6>
-              <h6 class="card-text"><%= row.text %></h6>
+              <h6> Subject : <%= row.text %></h6>
               <button class="btn btn-danger"> <a href="/del-citation/<%= row.id %>">Delete</a></button>
             </div>
           </div>

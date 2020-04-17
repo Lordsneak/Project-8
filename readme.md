@@ -26,3 +26,4 @@ Ajouté Sur APP.js
 METHOD => GET , POST , UPDATE , DELETE
 ---------------------------------------------------------
 pour exec app sur terminal ,$ Nodemon app.js
+tape sur browser : 127.0.0.1:1337

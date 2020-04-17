@@ -10,7 +10,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -20,7 +21,7 @@
 <body>
 
   <div class="col-12 bg">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <nav class="navbar navbar-expand-lg bg-transparent">
       <a class="navbar-brand" href="#">Book Website</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +47,7 @@
             <a class="nav-font1" href="#"><i class="fab fa-youtube"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-font1"  href="#"><i class="fab fa-twitter"></i></a>
+            <a class="nav-font1" href="#"><i class="fab fa-twitter"></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-font1" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -59,12 +60,32 @@
     </nav>
     <!-- Start -->
     <% citationdata.forEach(function(row){ %>
-      <h1 align="center"><%= row.text %></h1>
-      <h1 align="center"><%= row.source %></h1>
-      <h1 align="center"><%= row.id_auteur %></h1>
-      <button> <a href="/del-citation/<%= row.id %>">delete</a></button>
-      
-       <% }); %>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 cardcss1">
+          <div class="card">
+            <div class="card-body">
+              <h6> ID Auteur :</h6>
+              <h6 class="card-title"><%= row.id_auteur %></h6>
+              <h6> Source :</h6>
+              <h6 class="card-subtitle mb-2 text-muted"><%= row.source %></h6>
+              <h6> Subject :</h6>
+              <h6 class="card-text"><%= row.text %></h6>
+              <button class="btn btn-danger"> <a href="/del-citation/<%= row.id %>">Delete</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+
+
+
+
+
+
+
+
 
   </div>
 
@@ -97,7 +118,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
-   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 </body>
 

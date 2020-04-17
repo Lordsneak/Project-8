@@ -18,13 +18,28 @@
 }
 .nav-link {
     font-family: Montserrat;
-    color: white;
+    color: black;
 }
 .nav-font1{
-    color: white;
+    color: black;
 }
-
-
+.navbar-brand {
+    color: white;
+    font-weight: bold;
+}
+.navbar {
+    padding-top: 20px;
+}
+.cardcss1 {
+    padding-top: 10px;
+}
+.container {
+    padding-top: 60px;
+}
+.card-body {
+    font-family: Roboto;
+    text-align: center;
+}
 @media only screen and (max-width: 678px) {
     .bg {
         background-size: 300%;

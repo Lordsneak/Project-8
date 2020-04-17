@@ -12,6 +12,8 @@ Install expressjs
 $ npm i express
 Install EJS
 $ npm i ejs
+install nodemon :
+$ npm i nodemon
 Installation MYSQL : 
 $ npm i mysql
 Creation Fichier Index.ejs et Auteur.ejs & Citation.ejs
@@ -22,3 +24,5 @@ $ npm i body-parser
 -----------------------------------------------------------
 Ajouté Sur APP.js
 METHOD => GET , POST , UPDATE , DELETE
+---------------------------------------------------------
+pour exec app sur terminal ,$ Nodemon app.js

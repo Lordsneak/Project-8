@@ -42,11 +42,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get("/", (req, res) => {
     res.render('index')
 });
+app.get("/update", (req, res) => {
+    res.render('update')
+});
 app.get("/citation", (req, res) => {
-    res.render('citation')
+    connection.query('SELECT * FROM citation', (error, rows) => {
+        if (error) {
+            console.log("Error getting data")
+        } else {
+            res.render('citation',{ citationdata : rows})
+        }
+    })
 });
 app.get("/auteur", (req, res) => {
-    res.render('auteur')
+    connection.query('SELECT * FROM auteur', (error, rows) => {
+        if (error) {
+            console.log("Error getting data")
+        } else {
+            res.render('auteur',{ auteurdata : rows})
+        }
+    })
 });
 //  GET API DATA
 app.get('/citation/:id', (req, res) => {
@@ -101,8 +116,12 @@ app.post("/", urlencodedParser, (req, res) => {
 });
 //UPDATE DATA into mysql database
 
-app.put('/updatecitation', (req, res) => {
-    connection.query('UPDATE `citation` SET `text`=?,`source`=?,`id_auteur`=? where `id`=?', [req.body.text,req.body.source, req.body.id_auteur, req.body.id],  (error, results, fields)  =>  {
+app.post('/updatecitation', urlencodedParser, (req, res) => {
+
+    let reqbody1 = [req.body.text, req.body.source, req.body.id_auteur, req.body.id]
+    let sql = 'UPDATE `citation` SET `text`=?,`source`=?,`id_auteur`=? where `id`=?'
+
+    connection.query(sql, reqbody1 ,  (error)  =>  {
        if (error) {
            console.log("NO CHANGE DATA")
        } else {
@@ -110,7 +129,9 @@ app.put('/updatecitation', (req, res) => {
        }
 
      });
+     res.redirect('/')
  });
+
 
 //Delete Data
 app.get("/del-citation/:id", (req, res, next) => {
@@ -122,7 +143,9 @@ app.get("/del-citation/:id", (req, res, next) => {
         }
         console.log("Citation Data Deleted Successfully");
         next()
+        
     });
+    res.redirect('/citation')
 })
 app.get("/del-auteur/:id", (req, res, next) => {
 
@@ -133,7 +156,9 @@ app.get("/del-auteur/:id", (req, res, next) => {
         }
         console.log("Auteur Data Deleted Successfully");
         next()
+        
     });
+    res.redirect('/auteur')
 })
 
 
